@@ -127,7 +127,13 @@ app.post("/login", async (request, response) => {
             if (isPasswordMatched) {
                 const payload = { id: dbUser.id, role: dbUser.role };
                 const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: "1h" });
-                response.json({ token });
+                response.json({ 
+                    token: token, 
+                    user: {
+                        id: dbUser.id,
+                        role: dbUser.role
+                    }
+                });
             } else {
                 response.status(400).json({ error: "Email and password didn't match" })
             }
