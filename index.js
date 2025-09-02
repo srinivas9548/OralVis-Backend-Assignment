@@ -126,7 +126,7 @@ app.post("/login", async (request, response) => {
             const isPasswordMatched = await bcrypt.compare(password, dbUser.password);
             if (isPasswordMatched) {
                 const payload = { id: dbUser.id, role: dbUser.role };
-                const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: "1h" });
+                const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: "24h" });
                 return response.json({
                     token: token,
                     user: {
