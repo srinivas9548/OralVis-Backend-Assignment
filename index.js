@@ -127,8 +127,8 @@ app.post("/login", async (request, response) => {
             if (isPasswordMatched) {
                 const payload = { id: dbUser.id, role: dbUser.role };
                 const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: "1h" });
-                response.json({ 
-                    token: token, 
+                return response.json({
+                    token: token,
                     user: {
                         id: dbUser.id,
                         role: dbUser.role
@@ -150,6 +150,9 @@ app.post("/upload", authenticateToken, upload.single("image"), async (request, r
         }
 
         const { patientName, patientId, scanType, region } = request.body;
+
+        console.log(request.body);
+        console.log(request.file);
 
         if (!patientName) {
             return response.status(400).json({ error: "Patient name is required" });
@@ -186,7 +189,7 @@ app.post("/upload", authenticateToken, upload.single("image"), async (request, r
             }
 
             response.status(201).json({
-                message: "Image Uploaded Successfully",
+                message: "Patient Data Uploaded Successfully",
                 id: this.lastID,
                 patientName,
                 patientId,
