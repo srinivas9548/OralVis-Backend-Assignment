@@ -151,8 +151,8 @@ app.post("/upload", authenticateToken, upload.single("image"), async (request, r
 
         const { patientName, patientId, scanType, region } = request.body;
 
-        console.log(request.body);
-        console.log(request.file);
+        // console.log(request.body);
+        // console.log(request.file);
 
         if (!patientName) {
             return response.status(400).json({ error: "Patient name is required" });
