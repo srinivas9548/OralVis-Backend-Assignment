@@ -6,11 +6,11 @@
 Below are the login credentials for testing the project in live:
 
 ### Technician
-- **Username:** srinu123@gmail.com  
+- **Email:** srinu123@gmail.com  
 - **Password:** srinu@2022  
 
 ### Dentist
-- **Username:** vasu123@gmail.com  
+- **Email:** vasu123@gmail.com  
 - **Password:** vasu@2022  
 
 
