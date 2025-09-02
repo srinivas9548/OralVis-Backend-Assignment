@@ -13,7 +13,7 @@ Below are the login credentials for testing the project in live:
 - **Username:** vasu123@gmail.com  
 - **Password:** vasu@2022  
 
-
+---
 
 ## 1. Detailed Feature Breakdown & Step-by-Step Guide
 
@@ -60,7 +60,7 @@ This page is only accessible to users with the "Dentist" role.
     - This endpoint will query your SQLite database and retrieve all records from the `scans` table.
     - It will then send this list of scan data back to the frontend as a JSON array.
 
-
+---
 
 ## 2. Technologies Used
 
@@ -68,7 +68,7 @@ This page is only accessible to users with the "Dentist" role.
 - Express js
 - SQLite Database
 
-
+---
 
 ## 3. Installation setup
 
